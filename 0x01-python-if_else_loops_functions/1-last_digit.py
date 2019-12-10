@@ -5,13 +5,10 @@ if number < 0:
     last = number % -10
 else:
     last = number % 10
-print("last digit of ", number, "is", end=' ')
+print("last digit of ", number, "is", last, end=' ')
 if last > 5:
-    print(last, "and is greater than 5")
+    print("and is greater than 5")
 elif last == 0:
-    print(last, "and is zero")
+    print("and is 0")
 elif last < 6:
-    if last < 6 and last != 0:
-        print(last, "and is less than 6 and not 0")
-    else:
-        print(last)
+    print("and is less than 6 and not 0")
