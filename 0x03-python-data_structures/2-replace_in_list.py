@@ -5,7 +5,7 @@ def replace_in_list(my_list, idx, element):
     if (idx < 0):
         return (my_list)
     longi = len(my_list)
-    if (idx > longi):
+    if (idx >= longi):
         return (my_list)
     my_list[idx] = element
     return (my_list)
