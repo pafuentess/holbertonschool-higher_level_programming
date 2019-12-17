@@ -6,7 +6,7 @@ def new_in_list(my_list, idx, element):
         return (my_list)
 
     longi = len(my_list)
-    if (idx > longi):
+    if (idx >= longi):
         return (my_list)
 
     cpy_list = my_list[:]
