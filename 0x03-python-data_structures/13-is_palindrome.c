@@ -13,9 +13,6 @@ int is_palindrome(listint_t **head)
 	listint_t *tmp1;
 	int str[1000], i, j;
 
-	if (*head == NULL)
-		return (1);
-
 	tmp1 = *head;
 	i = 0;
 	while (tmp1)
@@ -24,6 +21,8 @@ int is_palindrome(listint_t **head)
 		tmp1 = tmp1->next;
 		i++;
 	}
+	if (i == 0)
+		return (1);
 
 	j = 0;
 	while (i >= 0)
