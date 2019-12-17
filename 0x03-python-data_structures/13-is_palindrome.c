@@ -3,6 +3,26 @@
 #include "lists.h"
 
 /**
+* listint_len - count members of list
+* @h: list to print
+* Return: number of lenght list
+*/
+
+size_t listint_len(const listint_t *h)
+{
+	unsigned int i;
+
+	i = 0;
+
+	while (h)
+	{
+		h = h->next;
+		i++;
+	}
+	return (i);
+}
+
+/**
 * is_palindrome - checks if a singly linked list is a palindrome.
 * @head: head of linked list
 * Return: 0 if it is not a palindrome, 1 if it is a palindrome
@@ -10,30 +30,21 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp1;
-	int str[1000], i, j;
+	int longi, i, j, str[1024];
 
-	tmp1 = *head;
-	i = 0;
-	while (tmp1)
+	longi = listint_len(*head);
+
+	for (i = 0; i <= longi - 1; i++)
 	{
-		str[i] = tmp1->n;
-		tmp1 = tmp1->next;
-		i++;
+		str[i] = (*head)->n;
+		(*head) = (*head)->next;
 	}
-	if (i == 0)
-		return (1);
-
-	j = 0;
-	while (i >= 0)
+	i--;
+	for (j = 0 ; j < longi; j++)
 	{
-		if (str[j] == str[i - 1])
-		{
-			i--;
-			j++;
-		}
-		else
+		if (str[j] != str[i])
 			return (0);
+		i--;
 	}
 	return (1);
 }
