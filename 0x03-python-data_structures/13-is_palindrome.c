@@ -39,8 +39,8 @@ int is_palindrome(listint_t **head)
 
 	for (i = 0; i <= longi - 1; i++)
 	{
-		str[i] = *head->n;
-		*head = *head->next;
+		str[i] = (*head)->n;
+		*head = (*head)->next;
 	}
 	i--;
 	for (j = 0 ; j < longi; j++)
