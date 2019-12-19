@@ -8,3 +8,4 @@ def roman_to_int(roman_string):
         for i in roman_string:
             suma = suma + r[i]
         return suma
+    return (0)
