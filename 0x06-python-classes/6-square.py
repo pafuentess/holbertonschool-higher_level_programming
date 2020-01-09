@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
-""" this is a class Square """
-
 
 class Square:
+    """ this is a class Square """
 
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
@@ -39,9 +38,11 @@ class Square:
             self.__position = value
 
     def area(self):
+        """ method to calculate an area"""
         return((self.__size) * (self.__size))
 
     def my_print(self):
+        """ method to print a square"""
         if (self.__size == 0):
             print()
         else:
