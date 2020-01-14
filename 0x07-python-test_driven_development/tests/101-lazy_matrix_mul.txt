@@ -1,0 +1,81 @@
+===============================
+101. Lazy Matrix multiplication
+===============================
+Function: multiplies 2 matrices:
+
+>>> lazy_matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[7, 10], [15, 22]]
+
+>>> lazy_matrix_mul("hola", [[1, 2], [3, 4]])
+Traceback (most recent call last):
+ValueError: Scalar operands are not allowed, use '*' instead
+
+>>> lazymatrix_mul([[1, 2], [3, 4]], "hola")
+Traceback (most recent call last):
+ValueError: Scalar operands are not allowed, use '*' instead
+
+>>> lazy_matrix_mul(1, [[1, 2], [3, 4]])
+Traceback (most recent call last):
+ValueError: Scalar operands are not allowed, use '*' instead
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], 1)
+Traceback (most recent call last):
+ValueError: Scalar operands are not allowed, use '*' instead
+
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+
+>>> lazy_matrix_mul(m_a + [1], m_b)
+Traceback (most recent call last):
+ValueError: setting an array element with a sequence.
+
+>>> lazy_matrix_mul(m_a, m_b + [1])
+Traceback (most recent call last):
+ValueError: setting an array element with a sequence.
+
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[3, 4]]
+
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+ValueError: shapes (2,2) and (1,2) not aligned: 2 (dim 1) != 1 (dim 0)
+
+>>> m_a = [["paula", 2], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+TypeError: TypeError: invalid data type for einsum 
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2], ["paula", 4]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+TypeError: invalid data type for einsum
+
+>>> m_a = [[1, 2], [3]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+ValueError: setting an array element with a sequence.
+
+>>> m_a = []
+>>> m_b = [[1,2,3], [4, 5, 6]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+ValueError: shapes (0,) and (2,3) not aligned: 0 (dim 0) != 2 (dim 0)
+
+>>> m_b = []
+>>> m_a = [[1,2,3], [4, 5, 6]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+ValueError: shapes (2,3) and (0,) not aligned: 3 (dim 1) != 0 (dim 0)
+
+>>> m_a = [[]]
+>>> m_b = [[1,2,3], [4, 5, 6]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+ValueError: shapes (1,0) and (2,3) not aligned: 0 (dim 1) != 2 (dim 0)
