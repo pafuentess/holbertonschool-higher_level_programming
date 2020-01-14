@@ -15,7 +15,7 @@ class TestMaxInteger(unittest.TestCase):
         lista = [5, 4, 3, 2]
         self.assertEqual(max_integer(lista), 5)
 
-    def list_of_one_element:
+    def list_of_one_element(self):
         lista = [5]
         self.assertEqual(max_integer(lista), 5)
 
