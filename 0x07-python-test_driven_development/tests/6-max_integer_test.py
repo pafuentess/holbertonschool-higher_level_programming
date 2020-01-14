@@ -15,6 +15,14 @@ class TestMaxInteger(unittest.TestCase):
         lista = [5, 4, 3, 2]
         self.assertEqual(max_integer(lista), 5)
 
+    def max_at_the_middle(self):
+        lista = [4, 3, 7, 2, 5]
+        self.assertEqual(max_integer(lista), 7)
+
+    def max_at_the_end(self):
+        lista = [4, 3, 2, 5]
+        self.assertEqual(max_integer(lista), 5)
+
     def list_of_one_element(self):
         lista = [5]
         self.assertEqual(max_integer(lista), 5)
