@@ -7,8 +7,8 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -54,7 +54,7 @@ class Rectangle:
         return (string[:-1])
 
     def __repr__(self):
-        return ("Rectangle (%s, %s)" % (self.width, self.height))
+        return ("Rectangle(%s, %s)" % (self.width, self.height))
 
     def __del__(self):
         print("Bye rectangle...")
