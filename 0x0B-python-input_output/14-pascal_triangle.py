@@ -7,7 +7,7 @@ def pascal_triangle(n):
     new = []
     lenght = 0
     if n <= 0:
-        return (new_row)
+        return (new)
 
     for row in range(0, n-1):
         lenght = len(triangle[row])
