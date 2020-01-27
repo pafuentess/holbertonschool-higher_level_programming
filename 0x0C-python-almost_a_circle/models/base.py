@@ -67,3 +67,29 @@ class Base:
                 return instances
         except Exception:
             return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ method 2 """
+        filename = cls.__name__ + ".csv"
+        dic = []
+
+        if list_objs is not None:
+            for element in list_objs:
+                dic.append(element.to_dictionary())
+        with open(filename, 'w') as fil3:
+            fil3.write(cls.to_json_string(dic))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ method 5 """
+        filename = cls.__name__ + ".csv"
+        instances = []
+        try:
+            with open(filename, 'r') as fil3:
+                lisst = cls.from_json_string(fil3.read())
+                for dic in lisst:
+                    instances.append(cls.create(**dic))
+                return instances
+        except Exception:
+            return instances
