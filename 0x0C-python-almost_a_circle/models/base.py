@@ -21,7 +21,7 @@ class Base:
         """ method 1 """
 
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return ([])
+            return ("[]")
         else:
             return(json.dumps(list_dictionaries))
 
@@ -30,9 +30,10 @@ class Base:
         """ method 2 """
         filename = cls.__name__ + ".json"
         dic = []
+       
         if list_objs is not None:
             for element in list_objs:
-                dic.append(cls.to_dictionary(element))
+                dic.append(element.to_dictionary())
         with open(filename, 'w') as fil3:
             fil3.write(cls.to_json_string(dic))
 
