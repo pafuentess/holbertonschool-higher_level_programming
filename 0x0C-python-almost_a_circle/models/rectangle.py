@@ -4,6 +4,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """ class rectangle """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
@@ -14,9 +15,11 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """ method 1 """
         return self.__width
 
     @width.setter
+    """ method 2 """
     def width(self, width):
         if (type(width) is not int):
             raise TypeError("width must be an integer")
@@ -26,10 +29,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """ method 3 """
         return self.__height
 
     @height.setter
     def height(self, height):
+        """ method 4 """
         if (type(height) is not int):
             raise TypeError("height must be an integer")
         if height <= 0:
@@ -38,10 +43,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """ method 5 """
         return self.__x
 
     @x.setter
     def x(self, x):
+        """method 6"""
         if (type(x) is not int):
             raise TypeError("x must be an integer")
         if x < 0:
@@ -50,10 +57,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ method 7 """
         return self.__y
 
     @y.setter
     def y(self, y):
+        """ method 8 """
         if (type(y) is not int):
             raise TypeError("y must be an integer")
         if y < 0:
@@ -61,9 +70,11 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        """ method 9 """
         return (self.__height * self.__width)
 
     def display(self):
+        """ method 10 """
         for i in range(0, self.__y):
             print()
         for i in range(0, self.__height):
@@ -75,10 +86,12 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """ method 11 """
         return ("[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format
                 (self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
+        """ method 12 """
         if args and len(args) > 0:
             i = 0
             for value in args:
@@ -106,6 +119,7 @@ class Rectangle(Base):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
+        """method 13 """
         dic = {}
         dic["id"] = self.id
         dic["width"] = self.width
