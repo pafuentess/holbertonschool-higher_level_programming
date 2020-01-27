@@ -30,7 +30,7 @@ class Base:
         """ method 2 """
         filename = cls.__name__ + ".json"
         dic = []
-       
+
         if list_objs is not None:
             for element in list_objs:
                 dic.append(element.to_dictionary())
