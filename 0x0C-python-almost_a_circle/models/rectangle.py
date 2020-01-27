@@ -10,6 +10,7 @@ class Rectangle(Base):
     """ class rectangle """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """ init """
         self.width = width
         self.height = height
         self.x = x
@@ -22,8 +23,8 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    """ method 2 """
     def width(self, width):
+        """ method 2 """
         if (type(width) is not int):
             raise TypeError("width must be an integer")
         if width <= 0:
