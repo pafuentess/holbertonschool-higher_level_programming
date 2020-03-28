@@ -17,9 +17,4 @@ if __name__ == "__main__":
                 ORDER BY cities.id;".format(sys.argv[4].split('\'')[0])
         cur.execute(instruction)
         rows = cur.fetchall()
-        leng = len(rows)
-        for row in range(leng):
-            if row != leng-1:
-                print("{}".format(rows[row][0]), end=', ')
-            else:
-                print(rows[row][0])
+        print(", ".join([row[0] for row in rows]))
