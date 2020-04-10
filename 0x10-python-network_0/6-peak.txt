@@ -1,1 +1,1 @@
-o(logn)
+O(logn)
