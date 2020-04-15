@@ -6,12 +6,12 @@ from sys import argv
 if __name__ == '__main__':
 
     if len(argv) == 2:
-        value = {'q': argv[1]}
+        data = {'q': argv[1]}
     else:
-        value = {'q': ''}
+        data = {'q': ''}
 
     url = "http://0.0.0.0:5000/search_user"
-    requestt = requests.post(url, value=value)
+    requestt = requests.post(url, data=data)
     try:
         answer = requestt.json()
         if len(answer) == 0:
