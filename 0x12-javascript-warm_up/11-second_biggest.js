@@ -2,9 +2,9 @@
 
 const length = process.argv.length;
 
-if (length === 2 || length === 3) {
+if (length < 4) {
   console.log(0);
-} else if (length > 3) {
+} else {
   let order = process.argv.slice(2);
   order = order.sort();
   const lenOr = order.length;
