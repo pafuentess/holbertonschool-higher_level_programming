@@ -1,17 +1,12 @@
 #!/usr/bin/node
 
 const length = process.argv.length;
-let value = '';
+const value = parseInt(process.argv[2]);
 
-if (length === 2) {
+if (length === 2 || (isNaN(value) === true)) {
   console.log('Missing number of occurrences');
 } else if (length > 2) {
-  value = parseInt(process.argv[2]);
-  if (isNaN(value) === true) {
-    console.log('Missing number of occurrences');
-  } else {
-    for (let i = 0; i < value; i++) {
-      console.log('C is fun');
-    }
+  for (let i = 0; i < value; i++) {
+    console.log('C is fun');
   }
 }
