@@ -1,4 +1,6 @@
-$.get('https://fourtonfish.com/hellosalut/?lang=fr', function(people) {
-  $('div#hello').text(data.hello);
+$.get('https://swapi-api.hbtn.io/api/films/?format=json', function (films) {
+  $.each(films.results, function (data, movies) {
+    $('#list_movies').append('<li>' + movies.title + '</li>')
+  });
 }, 'json'
 );
